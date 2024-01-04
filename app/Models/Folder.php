@@ -41,4 +41,12 @@ class Folder extends Model
     {
         return $this->belongsToMany(User::class);
     }
+
+    /**
+     * See a log of uploaded documents
+     */
+    public function logs()
+    {
+        return $this->morphMany(Logs::class, 'model');
+    }
 }

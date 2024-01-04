@@ -33,6 +33,13 @@ class Country extends Model implements HasMedia
         return $this->hasMany(Client::class);
     }
 
+    /**
+     * See a log of uploaded documents
+     */
+    public function logs()
+    {
+        return $this->morphMany(Logs::class, 'model');
+    }
     // public function registerMediaConversions(Media $media = null): void
     // {
     //     $this->addMediaConversion('thumb')

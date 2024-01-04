@@ -36,4 +36,12 @@ class PaymentRun extends Model
     {
         return $this->belongsTo(Country::class);
     }
+
+    /**
+     * See a log of upated statuses
+     */
+    public function logs()
+    {
+        return $this->morphMany(Logs::class, 'model');
+    }
 }
